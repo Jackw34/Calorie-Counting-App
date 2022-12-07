@@ -22,14 +22,17 @@ struct FoodView: View {
   
         Form {
             Section() {
+                // where you put the name of your food
                 TextField("Food name", text: $name)
                 
                 VStack {
+                    // allows you to selct the correct calorie type
                     Picker("Seclect calorie type", selection: $calorieType) {
                         ForEach(calorieTypes, id: \.self) {
                             Text($0)
                         }
                     }
+                    // where you enter the amount of calories your food was
                     TextField("Enter your calories", value: $calories, format: .number)
                         .textFieldStyle(.roundedBorder)
                         .padding()
@@ -40,6 +43,7 @@ struct FoodView: View {
                 HStack {
                     Spacer()
                     Button("Submit") {
+                        // where you submit whatever you have inputed into view so far
                         DataController().addFood(
                             name: name,
                             calories: calories,

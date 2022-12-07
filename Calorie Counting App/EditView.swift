@@ -19,6 +19,7 @@ struct EditView: View {
     var body: some View {
         Form {
             Section() {
+                // Allows to edit the name of the food and the amount of calories it was
                 TextField("\(food.name!)", text: $name)
                     .onAppear {
                         name = food.name!

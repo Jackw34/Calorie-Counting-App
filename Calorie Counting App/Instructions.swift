@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Instructions: View {
-
+    // display for the instructions 
     var body: some View {
         Text("In order to use this app click on the plus icon on the right hand side of the screen, which will bring you to the input screen. From here put the name of the food you ate and the appoximate amount of calories it was and then hit the submit button to add what you just added. If you want to edit what you just added click on the edit button on the left hand side of the screen, which will allow you to remove anything you added.")
             .font(.system(size: 25))
