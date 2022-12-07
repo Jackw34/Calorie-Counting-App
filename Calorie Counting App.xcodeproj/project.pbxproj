@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F359F452940EB4F005C0F8B /* FoodModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F359F432940EB4F005C0F8B /* FoodModel.xcdatamodeld */; };
+		2F359F472940EBD2005C0F8B /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F359F462940EBD2005C0F8B /* Instructions.swift */; };
 		2F58C0FD293E4C8D00DD9F10 /* Calorie_Counting_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58C0FC293E4C8D00DD9F10 /* Calorie_Counting_AppApp.swift */; };
 		2F58C0FF293E4C8D00DD9F10 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58C0FE293E4C8D00DD9F10 /* ContentView.swift */; };
 		2F58C101293E4C8F00DD9F10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F58C100293E4C8F00DD9F10 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F359F442940EB4F005C0F8B /* Food.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Food.xcdatamodel; sourceTree = "<group>"; };
+		2F359F462940EBD2005C0F8B /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
 		2F58C0F9293E4C8D00DD9F10 /* Calorie Counting App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Calorie Counting App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F58C0FC293E4C8D00DD9F10 /* Calorie_Counting_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calorie_Counting_AppApp.swift; sourceTree = "<group>"; };
 		2F58C0FE293E4C8D00DD9F10 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,7 +57,9 @@
 			children = (
 				2F58C0FC293E4C8D00DD9F10 /* Calorie_Counting_AppApp.swift */,
 				2F58C0FE293E4C8D00DD9F10 /* ContentView.swift */,
+				2F359F462940EBD2005C0F8B /* Instructions.swift */,
 				2F58C100293E4C8F00DD9F10 /* Assets.xcassets */,
+				2F359F432940EB4F005C0F8B /* FoodModel.xcdatamodeld */,
 				2F58C102293E4C8F00DD9F10 /* Preview Content */,
 			);
 			path = "Calorie Counting App";
@@ -139,6 +145,8 @@
 			files = (
 				2F58C0FF293E4C8D00DD9F10 /* ContentView.swift in Sources */,
 				2F58C0FD293E4C8D00DD9F10 /* Calorie_Counting_AppApp.swift in Sources */,
+				2F359F472940EBD2005C0F8B /* Instructions.swift in Sources */,
+				2F359F452940EB4F005C0F8B /* FoodModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +347,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2F359F432940EB4F005C0F8B /* FoodModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2F359F442940EB4F005C0F8B /* Food.xcdatamodel */,
+			);
+			currentVersion = 2F359F442940EB4F005C0F8B /* Food.xcdatamodel */;
+			path = FoodModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2F58C0F1293E4C8D00DD9F10 /* Project object */;
 }

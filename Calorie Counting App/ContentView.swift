@@ -15,19 +15,19 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            // view to the instructions
+            
             VStack(alignment: .leading) {
                 NavigationLink(destination: Instructions()) {
                     Text("Instructions For The App")
                         .font(.system(size: 25))
                 }
-                // where the total calories are counted and displayed
+                
                 Text("\(Int(totalCaloriesToday())) Cal")
                     .foregroundColor(.gray)
                     .padding([.horizontal])
                 
                 List {
-                    // The edit view
+                    
                     ForEach(food) { food in
                         NavigationLink(destination: EditFoodView(food: food)) {
                             HStack {
@@ -41,13 +41,13 @@ struct ContentView: View {
                             }
                         }
                     }
-                    .onDelete(perform: deleteFood) // allows you to delete what you added
+                    .onDelete(perform: deleteFood) 
                 }
                 .listStyle(.plain)
             }
-            // The title
+           
             .navigationTitle("Calorie Counter")
-            // adds the image to where you add food
+          
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
@@ -64,21 +64,21 @@ struct ContentView: View {
                 AddFoodView()
             }
         }
-        .navigationViewStyle(.stack) // Removes sidebar on iPad
+        .navigationViewStyle(.stack)
     }
     
-    // The function that deletes food that has been added
+    
     private func deleteFood(offsets: IndexSet) {
         withAnimation {
             offsets.map { food[$0] }
             .forEach(managedObjContext.delete)
             
-            // Saves to our database
+            
             DataController().save(context: managedObjContext)
         }
     }
     
-    // Calculates the total calories consumed today
+   
     private func totalCaloriesToday() -> Double {
         var caloriesToday : Double = 0
         for item in food {
