@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjContext
@@ -41,7 +42,7 @@ struct ContentView: View {
                             }
                         }
                     }
-                    .onDelete(perform: deleteFood) 
+                    .onDelete(perform: deleteFood)
                 }
                 .listStyle(.plain)
             }
@@ -61,7 +62,7 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $showingAddView) {
-                AddFoodView()
+                FoodView()
             }
         }
         .navigationViewStyle(.stack)
