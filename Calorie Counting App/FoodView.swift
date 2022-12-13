@@ -18,8 +18,6 @@ struct FoodView: View {
     let calorieTypes = ["Calories", "kilocalories"]
     
     var body: some View {
-            
-  
         Form {
             Section() {
                 // where you put the name of your food
@@ -55,6 +53,7 @@ struct FoodView: View {
             }
         }
     }
+    
 }
 
 struct AddFoodView_Previews: PreviewProvider {
