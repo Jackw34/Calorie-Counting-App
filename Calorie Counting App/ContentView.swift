@@ -9,6 +9,7 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    // calls upon the func in datacontroller to save the data the user inputted 
     @Environment(\.managedObjectContext) var managedObjContext
     @FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) var food: FetchedResults<Food>
     
@@ -28,21 +29,18 @@ struct ContentView: View {
                     .padding([.horizontal])
                 
                 List {
-                    // The edit view
+                    // The display of what user inputs
                     ForEach(food) { food in
-                        NavigationLink(destination: EditView(food: food)) {
-                            HStack {
-                                VStack(alignment: .leading, spacing: 6) {
-                                    Text(food.name!)
-                                        .bold()
-        
-                                    Text("\(Int(food.calories))") + Text(" calories").foregroundColor(.red)
-                                }
-                                Spacer()
+                        HStack {
+                            VStack(alignment: .leading, spacing: 6) {
+                                Text(food.name!)
+                                    .bold()
+                                Text("\(Int(food.calories))") + Text(" calories").foregroundColor(.red)
                             }
+                            Spacer()
                         }
                     }
-                    .onDelete(perform: deleteFood)// allows you to delete what you added
+                     .onDelete(perform: deleteFood) // allows you to delete what you added
                 }
                 .listStyle(.plain)
             }
@@ -72,9 +70,9 @@ struct ContentView: View {
     private func deleteFood(offsets: IndexSet) {
         withAnimation {
             offsets.map { food[$0] }
-            .forEach(managedObjContext.delete)
+                .forEach(managedObjContext.delete)
             
-            // Saves to our database
+            // Saves to the database
             DataController().save(context: managedObjContext)
         }
     }
@@ -83,9 +81,7 @@ struct ContentView: View {
     private func totalCaloriesToday() -> Double {
         var caloriesToday : Double = 0
         for item in food {
-            if Calendar.current.isDateInToday(item.date!) {
-                caloriesToday += item.calories
-            }
+            caloriesToday += item.calories
         }
         print("Calories today: \(caloriesToday)")
         return caloriesToday

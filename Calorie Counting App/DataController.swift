@@ -19,13 +19,13 @@ class DataController: ObservableObject {
             }
         }
     }
-    
+    // the function that allows for the data to be saved 
     func save(context: NSManagedObjectContext) {
         do {
             try context.save()
             print("Data saved successfully")
         } catch {
-            // Handle errors in our database
+            // Handle errors in the database
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }

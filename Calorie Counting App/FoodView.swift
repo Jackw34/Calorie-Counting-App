@@ -8,6 +8,7 @@
 import SwiftUI
 // nothing else to add
 struct FoodView: View {
+    // records what the user inputted from datacontroller.
     @Environment(\.managedObjectContext) var managedObjContext
     @Environment(\.dismiss) var dismiss
     
